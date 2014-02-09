@@ -44,9 +44,10 @@ void            ft_game(s_list env)
     int         j;
 
     ft_init(&env);
+    SDL_EnableKeyRepeat(100, 100);
     while (continu)
     {
-        SDL_PollEvent(&event);
+        SDL_WaitEvent(&event);
         switch(event.type)
         {
     case SDL_QUIT:

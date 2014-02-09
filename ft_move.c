@@ -33,7 +33,7 @@ void    ft_move(int map[][nb_square_vert], SDL_Rect *pos, int dir)
         pos->y--;
         break;
     case 1:
-        if (pos->y + 1 < 0)
+        if (pos->y + 1 >= nb_square_vert)
             break;
         if (map[pos->x][pos->y + 1] == WALL)
             break;
@@ -42,7 +42,7 @@ void    ft_move(int map[][nb_square_vert], SDL_Rect *pos, int dir)
             map[pos->x][pos->y + 2] == BOX || map[pos->x][pos->y + 2] == BOX_OK))
             break;
         deplacerCaisse(&map[pos->x][pos->y + 1], &map[pos->x][pos->y + 2]);
-        pos->y--;
+        pos->y++;
         break;
     case 2:
         if (pos->x - 1 < 0)
@@ -57,7 +57,7 @@ void    ft_move(int map[][nb_square_vert], SDL_Rect *pos, int dir)
         pos->x--;
         break;
     case 3:
-        if (pos->x + 1 < 0)
+        if (pos->x + 1 >= nb_square_hor)
             break;
         if (map[pos->x + 1][pos->y] == WALL)
             break;

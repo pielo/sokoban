@@ -18,6 +18,7 @@ void    ft_edit(s_list env)
         exit(EXIT_FAILURE);
     while (continu)
     {
+        SDL_WaitEvent(&event);
         switch(event.type)
         {
         case SDL_QUIT:
@@ -106,8 +107,9 @@ for (i = 0 ; i < nb_square_hor ; i++)
         }
     }
 }
-        }
 SDL_Flip(env.screen);
+        }
+
 SDL_FreeSurface(env.wall);
 SDL_FreeSurface(env.box);
 SDL_FreeSurface(env.obj);
