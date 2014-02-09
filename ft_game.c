@@ -46,6 +46,7 @@ void            ft_game(s_list env)
     ft_init(&env);
     while (continu)
     {
+        SDL_PollEvent(&event);
         switch(event.type)
         {
     case SDL_QUIT:
@@ -73,8 +74,12 @@ void            ft_game(s_list env)
                 env.mario_now = env.mario[3];
                 ft_move(env.map, &(env.player_pos), 3);
                 break;
+            default:
+                break;
         }
         break;
+            default:
+                break;
     }
 
     SDL_FillRect(env.screen, NULL, SDL_MapRGB(env.screen->format, 255, 255, 255));

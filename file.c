@@ -6,7 +6,7 @@ int     ft_load_map(int map[][nb_square_vert])
     char ligneFichier[nb_square_hor * nb_square_vert + 1] = {0};
     int i = 0, j = 0;
 
-    file = fopen("niveaux", "r");
+    file = fopen("niveaux.lvl", "r");
     if (file == NULL)
         return 0;
     fgets(ligneFichier, nb_square_hor * nb_square_vert + 1, file);
@@ -43,7 +43,7 @@ int     ft_save_map(int map[][nb_square_vert])
     FILE* file = NULL;
     int i = 0, j = 0;
 
-    file = fopen("niveaux", "w");
+    file = fopen("niveaux.lvl", "w");
     if (file == NULL)
         return 0;
 
