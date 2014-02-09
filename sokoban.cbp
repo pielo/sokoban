@@ -44,7 +44,16 @@
 			<Add directory="C:/Program Files/CodeBlocks/MinGW/lib" />
 		</Linker>
 		<Unit filename="cb.bmp" />
+		<Unit filename="file.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ft_edit.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="ft_game.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ft_move.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.c">
