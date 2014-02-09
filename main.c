@@ -9,14 +9,8 @@ static int     ft_event(s_list env)
         return (0);
     if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_KP1)
         ft_game(env);
-//    if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_UP)
-//        positionsapin.y--;
-//    if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_DOWN)
-//        positionsapin.y++;
-//    if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_LEFT)
-//        positionsapin.x--;
-//    if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_RIGHT)
-//        positionsapin.x++;
+    if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_KP2)
+        ft_edit(env);
     return (1);
 }
 
@@ -27,6 +21,8 @@ int             main(int argc, char** argv)
     SDL_Surface *menu = NULL;
     SDL_Rect    position_img;
 
+    (void)argc;
+    (void)argv;
     continu = 1;
     position_img.x = 0;
     position_img.y = 0;
@@ -36,11 +32,7 @@ int             main(int argc, char** argv)
         write(1, "Unable to init SDL\n", 20);
         return (EXIT_FAILURE);
     }
-    if ((env.screen = SDL_SetVideoMode(WIDTH, HEIGHT, 32, SDL_HWSURFACE | SDL_DOUBLEBUF)) < 0)
-    {
-        write(1, "impossible to create screen\n", 28);
-        return (EXIT_FAILURE);
-    }
+    env.screen = SDL_SetVideoMode(WIDTH, HEIGHT, 32, SDL_HWSURFACE | SDL_DOUBLEBUF);
     SDL_WM_SetCaption("Mario Sokoban", NULL);
     while(continu)
     {
